@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Code/C++/labs/last_try/build",
+  "command": "D:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyApp.dir/includes_CXX.rsp -g -o CMakeFiles\\MyApp.dir\\src\\main.cpp.obj -c C:\\Code\\C++\\labs\\last_try\\src\\main.cpp",
+  "file": "C:/Code/C++/labs/last_try/src/main.cpp",
+  "output": "CMakeFiles/MyApp.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Code/C++/labs/last_try/build",
+  "command": "D:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyApp.dir/includes_CXX.rsp -g -o CMakeFiles\\MyApp.dir\\src\\matrix.cpp.obj -c C:\\Code\\C++\\labs\\last_try\\src\\matrix.cpp",
+  "file": "C:/Code/C++/labs/last_try/src/matrix.cpp",
+  "output": "CMakeFiles/MyApp.dir/src/matrix.cpp.obj"
+},
+{
+  "directory": "C:/Code/C++/labs/last_try/build",
+  "command": "D:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyApp.dir/includes_CXX.rsp -g -o CMakeFiles\\MyApp.dir\\src\\functions.cpp.obj -c C:\\Code\\C++\\labs\\last_try\\src\\functions.cpp",
+  "file": "C:/Code/C++/labs/last_try/src/functions.cpp",
+  "output": "CMakeFiles/MyApp.dir/src/functions.cpp.obj"
+},
+{
+  "directory": "C:/Code/C++/labs/last_try/build",
+  "command": "D:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/MyApp.dir/includes_CXX.rsp -g -o CMakeFiles\\MyApp.dir\\src\\menu.cpp.obj -c C:\\Code\\C++\\labs\\last_try\\src\\menu.cpp",
+  "file": "C:/Code/C++/labs/last_try/src/menu.cpp",
+  "output": "CMakeFiles/MyApp.dir/src/menu.cpp.obj"
+}
+]
