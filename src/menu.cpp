@@ -20,8 +20,8 @@ void Print_message_create_menu() {
   std::cout << "4.Return to the main menu" << std::endl;
 }
 void Menu() {
-  Matrix *matrix_first = nullptr;
-  Matrix *matrix_secound = nullptr;
+  Matrix *matrix_first;
+  Matrix *matrix_secound;
   int check = 0;
 
   while (1) {
@@ -78,6 +78,8 @@ void Menu() {
       }
       break;
     case 5:
+      delete(matrix_first);
+      delete(matrix_secound);
       return;
     default:
       std::cout << C_RED << "You made mistake, try again " << C_WHITE
