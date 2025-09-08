@@ -1,3 +1,0 @@
-C:/Code/C++/labs/last_try/build/CMakeFiles/MyApp.dir
-C:/Code/C++/labs/last_try/build/CMakeFiles/edit_cache.dir
-C:/Code/C++/labs/last_try/build/CMakeFiles/rebuild_cache.dir
