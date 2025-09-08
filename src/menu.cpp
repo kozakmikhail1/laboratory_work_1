@@ -22,19 +22,19 @@ void Print_message_create_menu() {
 void Menu() {
   Matrix *matrix_first;
   Matrix *matrix_secound;
-  int check = 0;
+  bool is_create = false;
 
-  while (1) {
+  while (true) {
     Print_message_menu();
-    int choose = Read_Int("\033[33mEnter the operation number \033[0m");
+    int choose = Read_Int("\o{33}[33mEnter the operation number \o{33}[0m");
 
     switch (choose) {
     case 1:
       Menu_Create_Matrix(&matrix_first, &matrix_secound);
-      check = 1;
+      is_create = true;
       break;
     case 2:
-      if (check == 1) {
+      if (is_create == true) {
         std::cout <<"The first matrix" << std::endl;
         matrix_first->Create();
         std::cout <<"The secound matrix" << std::endl;
@@ -45,7 +45,7 @@ void Menu() {
       }
       break;
     case 3:
-      if (check == 1) {
+      if (is_create == true) {
         std::cout <<"The first matrix" << std::endl;
         matrix_first->Show();
         std::cout <<"The secound matrix" << std::endl;
@@ -56,12 +56,12 @@ void Menu() {
       }
       break;
     case 4:
-      if (check == 0) {
+      if (is_create == false) {
         std::cout << C_RED << "Error, you did not create the matrices."
                   << C_WHITE << std::endl;
         continue;
       }
-      if (check == 1 &&
+      if (is_create == true &&
           matrix_first->get_numbers_columns() ==
               matrix_secound->get_numbers_columns() &&
           matrix_first->get_numbers_strs() ==
@@ -78,8 +78,11 @@ void Menu() {
       }
       break;
     case 5:
-      delete(matrix_first);
-      delete(matrix_secound);
+      if(is_create == 0)
+      {
+        delete(matrix_first);
+        delete(matrix_secound);
+      }
       return;
     default:
       std::cout << C_RED << "You made mistake, try again " << C_WHITE
