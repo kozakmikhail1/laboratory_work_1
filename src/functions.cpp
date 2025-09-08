@@ -17,13 +17,15 @@ vector<int> Input_Row_Matrix(int number_element_of_row) {
       return std::vector<int>{0};
     }
     if (symbol == ' ' && number.size() > 0) {
-      row_matrix[index++] = (std::stoi(number));
+      row_matrix[index] = (std::stoi(number));
+      index++;
       number.clear();
       mines = 0;
       continue;
     }
     if ((symbol <= '9' && symbol >= '0') ||
-        (symbol == '-' && (mines == 0) ? mines = 1 : mines = 0)) {
+        (symbol == '-' && mines == 0)) {
+      mines = 1;
       number.push_back(symbol);
     } else {
       std::cout << C_RED << "You must enter only number\n"

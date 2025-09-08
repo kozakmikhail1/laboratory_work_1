@@ -34,7 +34,7 @@ void Menu() {
       check = 1;
       break;
     case 2:
-      if (matrix_first != nullptr) {
+      if (check == 1) {
         std::cout <<"The first matrix" << std::endl;
         matrix_first->Create();
         std::cout <<"The secound matrix" << std::endl;
@@ -45,7 +45,7 @@ void Menu() {
       }
       break;
     case 3:
-      if (matrix_first != nullptr) {
+      if (check == 1) {
         std::cout <<"The first matrix" << std::endl;
         matrix_first->Show();
         std::cout <<"The secound matrix" << std::endl;

@@ -22,7 +22,7 @@ public:
   }
 
   Matrix();
-  Matrix(int order);
+  explicit Matrix(int order);
   Matrix(int rows, int columns);
 
   void Create();
