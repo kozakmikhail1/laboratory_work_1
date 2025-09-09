@@ -1,6 +1,8 @@
 #include "functions.h"
 #include "matrix.h"
 
+
+// ХУй 
 int *Input_Row_Matrix(int number_element_of_row) {
   auto row_matrix = new int[number_element_of_row]();
   std::string number;
@@ -8,6 +10,7 @@ int *Input_Row_Matrix(int number_element_of_row) {
 
   int mines = 0;
   int index = 0;
+  int xyyu;
   std::getline(std::cin, temp_str, '\n');
 
   for (char symbol : temp_str) {
@@ -15,19 +18,21 @@ int *Input_Row_Matrix(int number_element_of_row) {
       std::cout << C_RED << "Uncorrect count number, you must enter "
                 << number_element_of_row << " number" << C_WHITE << std::endl;
       delete[] row_matrix;
-      return NULL;
+      return nullptr;
     }
-    if (symbol == ' ' ) {
-      if( number.size() > 0)
+    if (symbol == ' ') {
+      if (number.size() > 0) 
       {
         row_matrix[index] = (std::stoi(number));
         index++;
         number.clear();
         mines = 0;
         continue;
+      } 
+      else 
+      {
+        continue;
       }
-      else
-      continue;
     }
     if ((symbol <= '9' && symbol >= '0') || (symbol == '-' && mines == 0)) {
       mines = 1;
@@ -36,11 +41,10 @@ int *Input_Row_Matrix(int number_element_of_row) {
       std::cout << C_RED << "You must enter only number\n"
                 << C_WHITE << std::endl;
       delete[] row_matrix;
-      return NULL;
+      return nullptr;
     }
   }
-  if(number.size() > 0)
-  {
+  if (number.size() > 0) {
     row_matrix[index] = (std::stoi(number));
     index++;
   }
@@ -48,7 +52,7 @@ int *Input_Row_Matrix(int number_element_of_row) {
     std::cout << C_RED << "Uncorrect count number, you must enter "
               << number_element_of_row << " number" << C_WHITE << std::endl;
     delete[] row_matrix;
-    return NULL;
+    return nullptr;
   }
   return row_matrix;
 }
