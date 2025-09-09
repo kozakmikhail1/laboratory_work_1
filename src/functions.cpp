@@ -2,7 +2,6 @@
 #include "matrix.h"
 
 
-// ХУй 
 int *Input_Row_Matrix(int number_element_of_row) {
   auto row_matrix = new int[number_element_of_row]();
   std::string number;
@@ -10,7 +9,6 @@ int *Input_Row_Matrix(int number_element_of_row) {
 
   int mines = 0;
   int index = 0;
-  int xyyu;
   std::getline(std::cin, temp_str, '\n');
 
   for (char symbol : temp_str) {
