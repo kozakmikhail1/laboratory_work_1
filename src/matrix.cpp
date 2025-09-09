@@ -1,17 +1,16 @@
 #include "matrix.h"
 #include "functions.h"
 
-Matrix::Matrix() : number_of_rows(2), number_of_columns(2) {
-  matrix.resize(number_of_rows, std::vector<int>(number_of_columns, 0));
-}
+Matrix::Matrix() : Matrix(2,2) {}
 
-Matrix::Matrix(int order) : number_of_rows(order), number_of_columns(order) {
-  matrix.resize(number_of_rows, std::vector<int>(number_of_columns, 0));
-}
+Matrix::Matrix(int order) : Matrix(order, order) {}
 
 Matrix::Matrix(int rows, int columns)
     : number_of_rows(rows), number_of_columns(columns) {
-  matrix.resize(number_of_rows, std::vector<int>(number_of_columns, 0));
+    matrix = new int *[number_of_rows];
+    for (int i = 0; i < number_of_rows; i++) {
+      matrix[i] = new int[number_of_columns]{};
+    }
 }
 
 void Matrix::Create() {
@@ -20,7 +19,7 @@ void Matrix::Create() {
          << "-th line of matrix (number element in line " << number_of_columns
          << ")" << C_WHITE << endl;
     matrix[i] = Input_Row_Matrix(number_of_columns);
-    if (matrix[i] == std::vector<int>{0})
+    if (matrix[i] == NULL)
       i--;
   }
 }

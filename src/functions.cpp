@@ -1,8 +1,8 @@
 #include "functions.h"
 #include "matrix.h"
 
-vector<int> Input_Row_Matrix(int number_element_of_row) {
-  std::vector<int> row_matrix(number_element_of_row);
+int *Input_Row_Matrix(int number_element_of_row) {
+  int *row_matrix = new int[number_element_of_row]();
   std::string number;
   std::string temp_str;
 
@@ -11,34 +11,44 @@ vector<int> Input_Row_Matrix(int number_element_of_row) {
   std::getline(std::cin, temp_str, '\n');
 
   for (char symbol : temp_str) {
-    if (index >= number_element_of_row) {
+    if (index > number_element_of_row) {
       std::cout << C_RED << "Uncorrect count number, you must enter "
                 << number_element_of_row << " number" << C_WHITE << std::endl;
-      return std::vector<int>{0};
+      delete[] row_matrix;
+      return NULL;
     }
-    if (symbol == ' ' && number.size() > 0) {
-      row_matrix[index] = (std::stoi(number));
-      index++;
-      number.clear();
-      mines = 0;
+    if (symbol == ' ' ) {
+      if( number.size() > 0)
+      {
+        row_matrix[index] = (std::stoi(number));
+        index++;
+        number.clear();
+        mines = 0;
+        continue;
+      }
+      else
       continue;
     }
-    if ((symbol <= '9' && symbol >= '0') ||
-        (symbol == '-' && mines == 0)) {
+    if ((symbol <= '9' && symbol >= '0') || (symbol == '-' && mines == 0)) {
       mines = 1;
       number.push_back(symbol);
     } else {
       std::cout << C_RED << "You must enter only number\n"
                 << C_WHITE << std::endl;
-      return std::vector<int>{0};
+      delete[] row_matrix;
+      return NULL;
     }
   }
-  row_matrix[index] = (std::stoi(number));
-  index++;
+  if(number.size() > 0)
+  {
+    row_matrix[index] = (std::stoi(number));
+    index++;
+  }
   if (index != number_element_of_row) {
     std::cout << C_RED << "Uncorrect count number, you must enter "
               << number_element_of_row << " number" << C_WHITE << std::endl;
-    return std::vector<int>{0};
+    delete[] row_matrix;
+    return NULL;
   }
   return row_matrix;
 }

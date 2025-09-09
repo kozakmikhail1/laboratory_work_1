@@ -1,18 +1,16 @@
 #pragma once
 #include <iostream>
-#include <vector>
 
 using std::cin;
 using std::cout;
 using std::endl;
-using std::vector;
 
 class Matrix {
 private:
   int number_of_rows;
   int number_of_columns;
 
-  vector<vector<int>> matrix;
+  int** matrix = nullptr;
 
 public:
   int get_numbers_strs() const { return number_of_rows; }
