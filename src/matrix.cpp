@@ -19,7 +19,7 @@ void Matrix::Create() {
          << "-th line of matrix (number element in line " << number_of_columns
          << ")" << C_WHITE << endl;
     matrix[i] = Input_Row_Matrix(number_of_columns);
-    if (matrix[i] == NULL)
+    if (matrix[i] == nullptr)
       i--;
   }
 }
@@ -34,7 +34,7 @@ void Matrix::Show() const {
   cout << "\n";
 }
 
-void Matrix::Subtraction(const Matrix &subtractor) {
+void Matrix::Subtraction const(const Matrix &subtractor) {
   if (subtractor.get_numbers_columns() == number_of_columns &&
       subtractor.get_numbers_strs() == number_of_rows) {
     for (int i = 0; i < number_of_rows; i++) {
