@@ -33,7 +33,8 @@ vector<int> Input_Row_Matrix(int number_element_of_row) {
       return std::vector<int>{0};
     }
   }
-  row_matrix[index++] = (std::stoi(number));
+  row_matrix[index] = (std::stoi(number));
+  index++;
   if (index != number_element_of_row) {
     std::cout << C_RED << "Uncorrect count number, you must enter "
               << number_element_of_row << " number" << C_WHITE << std::endl;

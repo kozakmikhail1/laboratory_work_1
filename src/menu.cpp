@@ -19,7 +19,6 @@ void Print_message_create_menu() {
             << std::endl;
   std::cout << "4.Return to the main menu" << std::endl;
 }
-#include <memory>
 
 void Menu() {
   Matrix *matrix_first = nullptr;
@@ -28,11 +27,10 @@ void Menu() {
 
   while (true) {
     Print_message_menu();
-    int choose = Read_Int("\033[33mEnter the operation number \033[0m");
+    int choose = Read_Int("\o{\033[33m}Enter the operation number \o{\033[0m}");
 
     switch (choose) {
-    case 1: // Создание матриц
-      // Освобождаем старые матрицы перед созданием новых
+    case 1: 
       delete matrix_first;
       delete matrix_second;
       matrix_first = nullptr;
@@ -42,7 +40,7 @@ void Menu() {
       is_create = (matrix_first != nullptr && matrix_second != nullptr);
       break;
 
-    case 2: // Заполнение матриц
+    case 2:
       if (is_create) {
         std::cout << "The first matrix" << std::endl;
         matrix_first->Create();
@@ -54,7 +52,7 @@ void Menu() {
       }
       break;
 
-    case 3: // Показать матрицы
+    case 3: 
       if (is_create) {
         std::cout << "The first matrix" << std::endl;
         matrix_first->Show();
@@ -66,7 +64,7 @@ void Menu() {
       }
       break;
 
-    case 4: // Вычитание матриц
+    case 4: 
       if (!is_create) {
         std::cout << C_RED << "Error: matrices not created." << C_WHITE
                   << std::endl;
@@ -89,8 +87,7 @@ void Menu() {
       }
       break;
 
-    case 5: // Выход
-      // Освобождаем память
+    case 5: 
       delete matrix_first;
       delete matrix_second;
       matrix_first = nullptr;
@@ -111,7 +108,7 @@ void Menu_Create_Matrix(Matrix **matrix_1, Matrix **matrix_2) {
   *matrix_1 = nullptr;
   *matrix_2 = nullptr;
   Print_message_create_menu();
-  while (1) {
+  while (true) {
     int choose = Read_Int("Enter the operation number ");
 
     switch (choose) {
