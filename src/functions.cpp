@@ -2,7 +2,7 @@
 #include "matrix.h"
 
 int *Input_Row_Matrix(int number_element_of_row) {
-  int *row_matrix = new int[number_element_of_row]();
+  auto row_matrix = new int[number_element_of_row]();
   std::string number;
   std::string temp_str;
 
