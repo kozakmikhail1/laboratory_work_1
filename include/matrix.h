@@ -25,5 +25,5 @@ public:
 
   void Create();
   void Show() const;
-  void Subtraction(const Matrix &subtractor);
+  void Subtraction (const Matrix &subtractor);
 };

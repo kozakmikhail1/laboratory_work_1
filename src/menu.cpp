@@ -14,7 +14,7 @@ void Print_message_create_menu() {
             << std::endl;
   std::cout << "1.Creating a default matrix" << std::endl;
   std::cout << "2.Creating a matrix with order n" << std::endl;
-  std::cout << "3.Creating a matrix with the number of rows m, and the number "
+  std::cout << "3.Creating a matrix with the number \nof rows m, and the number "
                "of columns n"
             << std::endl;
   std::cout << "4.Return to the main menu" << std::endl;
