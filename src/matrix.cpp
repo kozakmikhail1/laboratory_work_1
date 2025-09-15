@@ -13,6 +13,13 @@ Matrix::Matrix(int rows, int columns)
     }
 }
 
+Matrix::Matrix(Matrix && other) noexcept : number_of_rows(other.number_of_rows), 
+        number_of_columns(other.number_of_columns), matrix(other.matrix)
+{
+  other.number_of_columns = 0;
+  other.number_of_rows = 0;
+  other.matrix = nullptr;
+}
 Matrix::~Matrix()
 {
   for(int i = 0;i < number_of_rows;i++)

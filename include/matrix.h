@@ -22,6 +22,7 @@ public:
   Matrix();
   explicit Matrix(int order);
   Matrix(int rows, int columns);
+  Matrix(Matrix && other) noexcept;
   ~Matrix();
 
   void Create();
