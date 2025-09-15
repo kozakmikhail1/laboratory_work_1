@@ -13,6 +13,13 @@ Matrix::Matrix(int rows, int columns)
     }
 }
 
+Matrix::~Matrix()
+{
+  for(int i = 0;i < number_of_rows;i++)
+    delete[] matrix[i];
+
+  delete[] matrix;
+}
 void Matrix::Create() {
   for (int i = 0; i < number_of_rows; i++) {
     cout << C_YELLOW << "Enter " << i + 1
@@ -34,7 +41,7 @@ void Matrix::Show() const {
   cout << "\n";
 }
 
-void Matrix::Subtraction (const Matrix &subtractor) {
+void Matrix::Subtraction (const Matrix &subtractor)const {
   if (subtractor.get_numbers_columns() == number_of_columns &&
       subtractor.get_numbers_strs() == number_of_rows) {
     for (int i = 0; i < number_of_rows; i++) {

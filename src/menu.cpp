@@ -27,7 +27,7 @@ void Menu() {
 
   while (true) {
     Print_message_menu();
-    int choose = Read_Int("\o{33}[33m""Enter the operation number ""\o{33}[0m");
+    int choose = Read_Int("\o{33}[33mEnter the operation number \o{33}[0m");
 
     switch (choose) {
     case 1: 

@@ -22,8 +22,9 @@ public:
   Matrix();
   explicit Matrix(int order);
   Matrix(int rows, int columns);
+  ~Matrix();
 
   void Create();
   void Show() const;
-  void Subtraction (const Matrix &subtractor);
+  void Subtraction (const Matrix &subtractor) const;
 };
